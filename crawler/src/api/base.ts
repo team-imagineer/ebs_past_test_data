@@ -12,17 +12,11 @@ export class Client {
     this.fetcher = got.extend({ cookieJar });
   }
 
-  public async get(
-    url: string,
-    options?: OptionsOfTextResponseBody | undefined,
-  ) {
+  public get(url: string, options?: OptionsOfTextResponseBody | undefined) {
     return this.fetcher.get(url, options);
   }
 
-  public async post(
-    url: string,
-    options?: OptionsOfTextResponseBody | undefined,
-  ) {
+  public post(url: string, options?: OptionsOfTextResponseBody | undefined) {
     return this.fetcher.post(url, options);
   }
 
