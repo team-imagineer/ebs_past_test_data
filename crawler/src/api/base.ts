@@ -20,18 +20,12 @@ export class Client {
     return this.fetcher.post(url, options);
   }
 
-  public async get$(
-    url: string,
-    options?: OptionsOfTextResponseBody | undefined,
-  ) {
+  public async get$(url: string, options?: OptionsOfTextResponseBody | undefined) {
     const response = await this.get(url, options);
     return cheerio.load(response.body);
   }
 
-  public async post$(
-    url: string,
-    options?: OptionsOfTextResponseBody | undefined,
-  ) {
+  public async post$(url: string, options?: OptionsOfTextResponseBody | undefined) {
     const response = await this.post(url, options);
     return cheerio.load(response.body);
   }

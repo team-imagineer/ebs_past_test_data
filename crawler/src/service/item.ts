@@ -6,29 +6,58 @@ import { ItemDto } from '../api/dto/item.dto';
 import { ItemsDto } from '../api/dto/items.dto';
 import { decodeFromBase64 } from '../helpers/b64';
 import { transformXmlToJson } from '../helpers/xml';
+import { recursiveSearchByField } from '../helpers/util';
 
 @Service()
 export class ItemService {
   constructor(private readonly apiService: ApiService) {}
 
-  async getItemById(id: string): Promise<ItemDto> {
+  async getItemById(id: string) {
     const rawBody = await this.apiService.getItemById(id);
-    const xml = decodeFromBase64(rawBody);
+    const result = transformXmlToJson(decodeFromBase64(rawBody)) as ItemDto;
 
-    return transformXmlToJson(xml);
+    return {
+      number: result.Item.LML.Numb,
+      groupId: result.Item.GroupID,
+      question:
+        (has(result, 'Item.LML.Question.Paragraph') ||
+          has(result, 'Item.LML.Question.List') ||
+          has(result, 'Item.LML.Question.Table')) &&
+        recursiveSearchByField(
+          {
+            ...result.Item.LML.Question.Paragraph,
+            ...result.Item.LML.Question.List,
+            ...result.Item.LML.Question.Table,
+          },
+          'Text',
+        ).join(),
+      explanation:
+        has(result, 'Item.LML.Question.Explanation') &&
+        recursiveSearchByField(result.Item.LML.Question.Explanation, 'Text').join(),
+    };
   }
 
-  async getItemsById(id: string): Promise<ItemsDto> {
+  async getItemsById(id: string) {
     const rawBody = await this.apiService.getItemsById(id);
-    const xml = decodeFromBase64(rawBody);
+    const result = transformXmlToJson(decodeFromBase64(rawBody)) as ItemsDto;
+    const sentence = result.Items?.Item?.find((item) => has(item, 'LML.Sentence'));
 
-    return transformXmlToJson(xml);
-  }
-
-  async getSentenceById(id: string) {
-    const result = await this.getItemsById(id);
-    const items = result.Items.Item;
-
-    return items.find((item) => has(item, 'LML.Sentence'));
+    return {
+      passage:
+        (has(sentence, 'LML.Sentence.Paragraph') ||
+          has(sentence, 'LML.Sentence.List') ||
+          has(sentence, 'LML.Sentence.Table')) &&
+        recursiveSearchByField(
+          {
+            ...sentence.LML.Sentence.Paragraph,
+            ...sentence.LML.Sentence.List,
+            ...sentence.LML.Sentence.Table,
+          },
+          'Text',
+        ).join(),
+      explanation:
+        has(sentence, 'LML.Sentence.Explanation') &&
+        recursiveSearchByField(sentence.LML.Sentence.Explanation, 'Text').join(),
+    };
   }
 }

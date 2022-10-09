@@ -10,8 +10,7 @@ export class ApiService {
 
   async search(searchRequestDto: SearchRequestDto): Promise<SearchDto> {
     const response = await this.client.post(
-      process.env.SEARCH_URL ||
-        'https://ai.ebs.co.kr/ebs/ai/xipa/ItemSearchHigh.ajax',
+      process.env.SEARCH_URL || 'https://ai.ebs.co.kr/ebs/ai/xipa/ItemSearchHigh.ajax',
       {
         json: searchRequestDto,
       },
@@ -22,8 +21,7 @@ export class ApiService {
 
   async getItemById(id: string): Promise<string> {
     const response = await this.client.get(
-      process.env.ITEM_URL ||
-        'https://ai.ebs.co.kr/ebs/xip/webservice/Item.ebs',
+      process.env.ITEM_URL || 'https://ai.ebs.co.kr/ebs/xip/webservice/Item.ebs',
       {
         searchParams: new URLSearchParams([
           ['Action', 'Select'],
@@ -39,8 +37,7 @@ export class ApiService {
 
   async getItemsById(id: string): Promise<string> {
     const response = await this.client.get(
-      process.env.ITEM_URL ||
-        'https://ai.ebs.co.kr/ebs/xip/webservice/Items.ebs',
+      process.env.ITEM_URL || 'https://ai.ebs.co.kr/ebs/xip/webservice/Items.ebs',
       {
         searchParams: new URLSearchParams([
           ['Action', 'SelectGroup'],

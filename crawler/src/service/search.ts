@@ -15,18 +15,18 @@ export type SearchPayload = {
 const defaultDto = {
   is_moc: '1',
   target_cd: '3',
-  cate_cd_2: '2002730',
+  cate_cd_2: '2002730,2002731,2006158,2006372,2002732',
   item_point: '1,2,3,4',
-  item_type: '1',
+  item_type: '1,2',
   previous_questions: [
-    {
-      cate_cd_2: '2002730',
-      month: '06',
-      year: '2021',
-    },
+    { cate_cd_2: '2002730', month: '11', year: '2021' },
+    { cate_cd_2: '2002731', month: '11', year: '2021' },
+    { cate_cd_2: '2006158', month: '11', year: '2021' },
+    { cate_cd_2: '2006372', month: '11', year: '2021' },
+    { cate_cd_2: '2002732', month: '11', year: '2021' },
   ],
-  item_num: '100',
-  del_dupitem_yn: 1,
+  item_num: '60',
+  del_dupitem_yn: 0,
   wrong_rate: '0',
 };
 
