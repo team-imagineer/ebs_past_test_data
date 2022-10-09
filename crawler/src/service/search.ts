@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 
 import { ApiService } from '../api';
-import { SearchDto } from '../api/dto/search.dto';
+import { SearchRequestDto } from '../api/dto/search-request.dto';
 
 export type SearchPayload = {
   grade: string[];
@@ -36,7 +36,7 @@ export class SearchService {
 
   async search(payload: SearchPayload) {
     try {
-      const dto: SearchDto = {
+      const dto: SearchRequestDto = {
         ...defaultDto,
         target_cd: payload.grade.join(','),
         cate_cd_2: payload.category.map((c) => c.subject).join(','),

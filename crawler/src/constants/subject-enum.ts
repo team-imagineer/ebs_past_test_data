@@ -1,4 +1,4 @@
-export enum SubjectEnum {
+export enum SUBJECT {
   독서 = '2002730',
   문학 = '2002731',
   화법 = '2002734',
