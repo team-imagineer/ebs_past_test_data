@@ -11,10 +11,15 @@ export type Item = {
   IsSentence: string;
   SheetName: string;
   ItemIndexes: {
-    ItemIndex: {
-      // 2015 개정 분류 > 국어 > 독서 > 독서 계획과 활동 > 독서 계획 수립 > 적절한 독서 계획 수립과 독서 실천
-      YearName: string;
-    };
+    ItemIndex:
+      | {
+          // 2015 개정 분류 > 국어 > 독서 > 독서 계획과 활동 > 독서 계획 수립 > 적절한 독서 계획 수립과 독서 실천
+          YearName: string;
+        }
+      | {
+          // 2015 개정 분류 > 국어 > 독서 > 독서 계획과 활동 > 독서 계획 수립 > 적절한 독서 계획 수립과 독서 실천
+          YearName: string;
+        }[];
   };
   LML: {
     Numb: string;
@@ -26,7 +31,7 @@ export type Item = {
 
 type LMLContent = {
   Paragraph: Paragraph | Paragraph[];
-  List: List | List[];
+  List: List;
   Table: Table | Table[];
   Explanation: Explanation | Explanation[];
 };

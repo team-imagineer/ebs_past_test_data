@@ -1,0 +1,202 @@
+{
+  "Item": {
+    "ApplyYear": "2021",
+    "ConfirmDate": "2021-11-30",
+    "ConfirmLevelID": "3",
+    "ConfirmUserID": "",
+    "CorrectAnswer": "",
+    "CreateUserID": "",
+    "Descript": "",
+    "FromCompanyID": "0",
+    "GroupID": "20205268",
+    "HasSound": "false",
+    "ID": "20205268",
+    "IsConfirm": "true",
+    "IsDelete": "false",
+    "IsMoc": "true",
+    "IsSentence": "false",
+    "ItemCode": "",
+    "ItemID": "20205268",
+    "ItemNo": "20205268",
+    "LevelID": "7",
+    "MakeDate": "",
+    "PCode": "",
+    "Point": "2",
+    "SearchWords": "",
+    "SheetName": "2022 대학수학능력시험>국어>28번",
+    "TypeID": "21",
+    "BookItem": {
+      "BookNo": "",
+      "Code": "",
+      "ExpCourseID": "",
+      "ExpLectureID": "",
+      "ItemNumber": "",
+      "MakeUserName": "",
+      "Title": "",
+      "Unit1": "",
+      "Unit2": "",
+      "Unit3": ""
+    },
+    "ItemStat": {
+      "AnswerCount": "0",
+      "CorrectCount": "0",
+      "CorrectRate": "0.0",
+      "FiveCount": "0",
+      "FourCount": "0",
+      "OneCount": "0",
+      "ThreeCount": "0",
+      "TwoCount": "0"
+    },
+    "ItemIndexes": {
+      "ID": "",
+      "ItemCount": "0",
+      "Page": "1",
+      "PageSize": "20",
+      "Size": "2",
+      "TotalPage": "1",
+      "TotalRow": "0",
+      "ItemIndex": [
+        {
+          "ApplyNo": "7",
+          "DomainID": "2000001",
+          "DomainName": "",
+          "ID": "",
+          "Index1ID": "2002747",
+          "Index1Name": "",
+          "Index2ID": "2002808",
+          "Index2Name": "",
+          "Index3ID": "2003092",
+          "Index3Name": "",
+          "IndexType": "7",
+          "SubjectID": "",
+          "SubjectName": "",
+          "YearID": "2000000",
+          "YearName": "2015 개정 분류 > 국어 > 문학 > 고전 산문 > 문학의 수용 > 작품의 내용 이해"
+        },
+        {
+          "ApplyNo": "7",
+          "DomainID": "2000002",
+          "DomainName": "",
+          "ID": "",
+          "Index1ID": "2006465",
+          "Index1Name": "",
+          "Index2ID": "2003713",
+          "Index2Name": "",
+          "Index3ID": "2006697",
+          "Index3Name": "",
+          "IndexType": "7",
+          "SubjectID": "",
+          "SubjectName": "",
+          "YearID": "2000000",
+          "YearName": "2015 개정 분류 > 국어(작품&amp;소재별) > 문학 > 고전소설 > 작자 미상 > 박태보전"
+        }
+      ]
+    },
+    "PreviewText": {},
+    "LML": {
+      "Numb": "28",
+      "Seq": "35",
+      "Question": {
+        "Paragraph": [
+          {
+            "Margin": "0,0,0,0",
+            "TextAlignment": "Justify",
+            "Run": { "FontSize": "10", "Text": "[문제]    " }
+          },
+          {
+            "Margin": "0,0,0,0",
+            "TextAlignment": "Justify",
+            "Image": {
+              "ContentHeight": "174",
+              "ContentWidth": "350",
+              "Margin": "0,0,0,0",
+              "Uri": "paper/21607586/20205268_000.png"
+            }
+          }
+        ],
+        "List": {
+          "ListItem": [
+            {
+              "OriginalSequence": "1",
+              "Paragraph": {
+                "Margin": "0,0,0,0",
+                "TextAlignment": "Justify",
+                "Run": { "FontSize": "10", "Text": "①번" }
+              }
+            },
+            {
+              "IsCorrectAnswer": "True",
+              "OriginalSequence": "2",
+              "Paragraph": {
+                "Margin": "0,0,0,0",
+                "TextAlignment": "Justify",
+                "Run": { "FontSize": "10", "Text": "②번" }
+              }
+            },
+            {
+              "OriginalSequence": "3",
+              "Paragraph": {
+                "Margin": "0,0,0,0",
+                "TextAlignment": "Justify",
+                "Run": { "FontSize": "10", "Text": "③번" }
+              }
+            },
+            {
+              "OriginalSequence": "4",
+              "Paragraph": {
+                "Margin": "0,0,0,0",
+                "TextAlignment": "Justify",
+                "Run": { "FontSize": "10", "Text": "④번" }
+              }
+            },
+            {
+              "OriginalSequence": "5",
+              "Paragraph": {
+                "Margin": "0,0,0,0",
+                "TextAlignment": "Justify",
+                "Run": { "FontSize": "10", "Text": "⑤번" }
+              }
+            }
+          ]
+        },
+        "Explanation": {
+          "Paragraph": [
+            {
+              "Margin": "0,0,0,0",
+              "TextAlignment": "Justify",
+              "Run": { "FontSize": "10", "FontWeight": "Bold", "Text": "작품의 내용 이해" }
+            },
+            {
+              "Margin": "0,0,0,0",
+              "TextAlignment": "Justify",
+              "Run": [
+                { "FontSize": "10", "FontWeight": "Bold", "Text": "정답해설 :" },
+                {
+                  "FontSize": "10",
+                  "Text": " 박태보가 정배를 간 후 부인은 꿈에서 남편을 만나게 되는데, 부인은 학발의관을 갖춘 어린 제자 오륙 인이 서 있는 것을 보고 놀라 �����에서 깨어나게 된다.                                        "
+                },
+                { "FontSize": "10", "FontWeight": "Bold", "Text": "정답 ②" }
+              ]
+            },
+            {
+              "Margin": "0,0,0,0",
+              "TextAlignment": "Justify",
+              "Run": [
+                { "FontSize": "10", "FontWeight": "Bold", "Text": "[오답피하기] " },
+                {
+                  "FontSize": "10",
+                  "Text": "① 태보는 형옥에서 금부로 이송되는데, 이것은 상의 하교로 이루어진 것이지 태보가 자청했기 때문에 이루어진 것이 아니다. ③ 대감은 박태보가 죽었다는 소식을 듣고 즉시 과천으로 가서 초종례를 극진히 한 후에, 박태보의 주검을 염습하여 집으로 옮겨 왔다. 따라서 아들의 주검을 집으로 데려와 초종례를 지낸 것이 아니다. ④ 상은 아이들의 노래를 듣고 심신이 산란하여 그 아이들 성명을 묻고자 하였으나, 아이들이 달아나 그 뜻을 이루지 못"
+                },
+                { "FontSize": "10", "Text": "했" },
+                {
+                  "FontSize": "10",
+                  "Text": "다. ⑤ 형조 판서는 박태보에 대한 조사 결과를 자세히 보고한 것이 아니라, 마지못하여 위계를 갖추고 대강 직계를 올렸다. "
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

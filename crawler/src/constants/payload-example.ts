@@ -1,59 +1,109 @@
 import { SUBJECT } from './subject-enum';
 
+const 개정전국어 = (year: string, month: string) => [
+  { subject: SUBJECT.독서, month, year },
+  { subject: SUBJECT.문학, month, year },
+  { subject: SUBJECT.언어_문법, month, year },
+  { subject: SUBJECT.언어와매체_언어, month, year },
+  { subject: SUBJECT.언어와매체_매체, month, year },
+  { subject: SUBJECT.화법, month, year },
+  { subject: SUBJECT.작문, month, year },
+];
+
+const 언어와매체 = (year: string, month: string) => [
+  { subject: SUBJECT.독서, month, year },
+  { subject: SUBJECT.문학, month, year },
+  { subject: SUBJECT.언어_문법, month, year },
+  { subject: SUBJECT.언어와매체_언어, month, year },
+  { subject: SUBJECT.언어와매체_매체, month, year },
+];
+
+const 화법과작문 = (year: string, month: string) => [
+  { subject: SUBJECT.독서, month, year },
+  { subject: SUBJECT.문학, month, year },
+  { subject: SUBJECT.화법, month, year },
+  { subject: SUBJECT.작문, month, year },
+];
+
+const $ = (subject: string, grade: string, year: string, month: string) => {
+  switch (subject) {
+    case '개정전국어':
+      return {
+        [`${year}년/${month}월/${grade}학년/${subject}`]: {
+          grade: [grade],
+          category: 개정전국어(year, month),
+        },
+      };
+    case '언어와매체':
+      return {
+        [`${year}년/${month}월/${grade}학년/${subject}`]: {
+          grade: [grade],
+          category: 언어와매체(year, month),
+        },
+      };
+    case '화법과작문':
+      return {
+        [`${year}년/${month}월/${grade}학년/${subject}`]: {
+          grade: [grade],
+          category: 화법과작문(year, month),
+        },
+      };
+  }
+};
+
+/**
+ * @TODO 개정되는 시점 정확히 파악하기
+ */
 export const example = {
-  '2021년/11월/3학년/언어와매체': {
-    grade: ['3'],
-    category: [
-      {
-        subject: SUBJECT.독서,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.문학,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.언어_문법,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.언어와매체_언어,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.언어와매체_매체,
-        month: '11',
-        year: '2021',
-      },
-    ],
-  },
-  '2021년/11월/3학년/화법과작문': {
-    grade: ['3'],
-    category: [
-      {
-        subject: SUBJECT.독서,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.문학,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.화법,
-        month: '11',
-        year: '2021',
-      },
-      {
-        subject: SUBJECT.작문,
-        month: '11',
-        year: '2021',
-      },
-    ],
-  },
+  // 2021년
+  ...$('언어와매체', '3', '2021', '11'),
+  ...$('화법과작문', '3', '2021', '11'),
+  ...$('언어와매체', '3', '2021', '10'),
+  ...$('화법과작문', '3', '2021', '10'),
+  ...$('언어와매체', '3', '2021', '09'),
+  ...$('화법과작문', '3', '2021', '09'),
+  ...$('언어와매체', '3', '2021', '07'),
+  ...$('화법과작문', '3', '2021', '07'),
+  ...$('언어와매체', '3', '2021', '06'),
+  ...$('화법과작문', '3', '2021', '06'),
+  ...$('언어와매체', '3', '2021', '04'),
+  ...$('화법과작문', '3', '2021', '04'),
+  ...$('언어와매체', '3', '2021', '03'),
+  ...$('화법과작문', '3', '2021', '03'),
+
+  // 2020년
+  ...$('개정전국어', '3', '2020', '12'),
+  ...$('개정전국어', '3', '2020', '10'),
+  ...$('개정전국어', '3', '2020', '09'),
+  ...$('개정전국어', '3', '2020', '07'),
+  ...$('개정전국어', '3', '2020', '06'),
+  ...$('개정전국어', '3', '2020', '04'),
+  ...$('개정전국어', '3', '2020', '03'),
+
+  // 2019년
+  ...$('개정전국어', '3', '2019', '11'),
+  ...$('개정전국어', '3', '2019', '10'),
+  ...$('개정전국어', '3', '2019', '09'),
+  ...$('개정전국어', '3', '2019', '07'),
+  ...$('개정전국어', '3', '2019', '06'),
+  ...$('개정전국어', '3', '2019', '04'),
+  ...$('개정전국어', '3', '2019', '03'),
+
+  // 2018년
+  ...$('개정전국어', '3', '2018', '11'),
+  ...$('개정전국어', '3', '2018', '10'),
+  ...$('개정전국어', '3', '2018', '09'),
+  ...$('개정전국어', '3', '2018', '07'),
+  ...$('개정전국어', '3', '2018', '06'),
+  ...$('개정전국어', '3', '2018', '04'),
+  ...$('개정전국어', '3', '2018', '03'),
+
+  // 2017년
+  ...$('개정전국어', '3', '2017', '11'),
+  ...$('개정전국어', '3', '2017', '10'),
+  ...$('개정전국어', '3', '2017', '09'),
+  ...$('개정전국어', '3', '2017', '07'),
+  ...$('개정전국어', '3', '2017', '06'),
+  ...$('개정전국어', '3', '2017', '04'),
+  ...$('개정전국어', '3', '2017', '03'),
 };
