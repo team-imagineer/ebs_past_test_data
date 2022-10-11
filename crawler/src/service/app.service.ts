@@ -79,6 +79,9 @@ export class AppService {
                   type: 'question',
                   number: number || item_number, // 연도에 따른 누락 데이터 처리
                   properties: { name, question, explanation, answer, category },
+                  imageUrl: `${process.env.S3_URL || 'https://s3.seodaang.com'}/${title}/q${
+                    number || item_number
+                  }.png`,
                 },
               ],
             };
@@ -103,6 +106,16 @@ export class AppService {
           const p = a.type === 'passage' ? +a.children[0].number : +a.number;
           const q = b.type === 'passage' ? +b.children[0].number : +b.number;
           return p - q;
+        });
+
+        // passage 순서로 URL 매핑 (정렬 전에는 별다른 순서 정보가 없기 때문에 여기서 처리)
+        let passageNumber = 1;
+        groups.forEach((group) => {
+          if (group.type === 'passage') {
+            group.properties.imageUrl = `${
+              process.env.S3_URL || 'https://s3.seodaang.com'
+            }/${title}/p${passageNumber++}.png`;
+          }
         });
 
         const dirPath = path.join(__dirname, `../../../dataset/${title}/`);

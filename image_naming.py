@@ -2,10 +2,9 @@ import os
 
 DATA_PATH = './dataset'
 IMAGE_PATH = './image'
+
 files = [fname for fname in os.listdir(IMAGE_PATH)
          if os.path.isfile(os.path.join(IMAGE_PATH, fname))]
-
-
 
 for file in files:
     chunks = file.split('_')
