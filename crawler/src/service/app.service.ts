@@ -72,16 +72,22 @@ export class AppService {
             itemSet[groupId] = {
               ...itemSet[groupId],
               type: 'passage',
-              properties: { passage, explanation: passageExplanation },
+              properties: {},
+              metadata: { passage, explanation: passageExplanation },
               children: [
                 ...itemSet[groupId].children,
                 {
                   type: 'question',
                   number: number || item_number, // 연도에 따른 누락 데이터 처리
-                  properties: { name, question, explanation, answer, category },
-                  imageUrl: `${process.env.S3_URL || 'https://s3.seodaang.com'}/${title}/q${
-                    number || item_number
-                  }.png`,
+                  properties: {
+                    name,
+                    answer,
+                    category,
+                    imageUrl: `${process.env.S3_URL || 'https://s3.seodaang.com'}/${title}/q${
+                      number || item_number
+                    }.png`,
+                  },
+                  metadata: { question, explanation },
                 },
               ],
             };
@@ -90,7 +96,15 @@ export class AppService {
             itemSet[groupId || item_id] = {
               type: 'question',
               number: number || item_number, // 연도에 따른 누락 데이터 처리
-              properties: { name, question, explanation, answer, category },
+              properties: {
+                name,
+                answer,
+                category,
+                imageUrl: `${process.env.S3_URL || 'https://s3.seodaang.com'}/${title}/q${
+                  number || item_number
+                }.png`,
+              },
+              metadata: { question, explanation },
             };
           }
         }
@@ -120,7 +134,16 @@ export class AppService {
 
         const dirPath = path.join(__dirname, `../../../dataset/${title}/`);
         await fs.mkdir(dirPath, { recursive: true });
-        await fs.writeFile(path.join(dirPath, 'result.json'), JSON.stringify(groups));
+        await fs.writeFile(
+          path.join(dirPath, 'result.json'),
+          JSON.stringify({
+            title: title.split('/').join(' '),
+            grade: payload.grade,
+            month: payload.category[0].month,
+            year: payload.category[0].year,
+            content: groups,
+          }),
+        );
 
         consoleRewrite('✅ 상세정보 검색완료');
       }
